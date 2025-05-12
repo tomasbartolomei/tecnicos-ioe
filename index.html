@@ -1,26 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Subir archivo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+
+    select, input[type="file"] {
+      width: 100%;
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.6rem;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+    }
+
+    #respuesta {
+      margin-top: 1rem;
+      color: green;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <h2>Formulario de carga</h2>
+  <div class="container">
+    <h2>Subir archivo</h2>
+    <form id="formulario">
+      <label for="servicio">Servicio:</label>
+      <select id="servicio" name="servicio">
+        <option value="servicio1">Servicio 1</option>
+        <option value="servicio2">Servicio 2</option>
+      </select>
 
-  <form id="formulario">
-    <label for="servicio">Seleccionar servicio:</label>
-    <select id="servicio" name="servicio">
-      <option value="servicio1">Servicio 1</option>
-      <option value="servicio2">Servicio 2</option>
-    </select><br><br>
+      <label for="archivo">Archivo:</label>
+      <input type="file" id="archivo" name="archivo">
 
-    <label for="archivo">Subir archivo:</label>
-    <input type="file" id="archivo" name="archivo"><br><br>
-
-    <button type="submit">Enviar</button>
-  </form>
-
-  <p id="respuesta"></p>
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="respuesta"></p>
+  </div>
 
   <script>
     document.getElementById('formulario').addEventListener('submit', async (e) => {
